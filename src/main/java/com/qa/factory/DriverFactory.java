@@ -2,10 +2,14 @@ package com.qa.factory;
 
 
 
+import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.safari.SafariDriver;
+
+import com.qa.util.ElementUtil;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
@@ -49,6 +53,8 @@ public class DriverFactory {
 		
 		getDriver().manage().deleteAllCookies();
 		getDriver().manage().window().maximize();
+		getDriver().manage().timeouts().pageLoadTimeout(ElementUtil.PAGE_LOAD_TIMEOUT,TimeUnit.SECONDS);
+		getDriver().manage().timeouts().implicitlyWait(ElementUtil.IMPLICIT_WAIT, TimeUnit.SECONDS);
 		return getDriver();
 		
 }

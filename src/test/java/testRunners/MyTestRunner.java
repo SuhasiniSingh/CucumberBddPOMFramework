@@ -7,10 +7,11 @@ import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-		features = {"src//test//resources//AppFeatures//loginPage.feature"},
+		//features={"classpath:features}
+		features = {"src//test//resources//AppFeatures"},
 		glue = {"stepdefinitions","AppHooks"},
+		tags = "@Login",
 		monochrome=true,
-		//tags = "not @Skip" or ~@Smoke,
 		dryRun = false,
 		plugin = {"pretty"
 				

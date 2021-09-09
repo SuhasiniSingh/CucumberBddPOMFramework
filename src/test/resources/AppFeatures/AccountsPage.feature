@@ -1,3 +1,4 @@
+@Account
 Feature: Account Page Feature
 
 Background:
